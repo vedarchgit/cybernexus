@@ -1,0 +1,37 @@
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: cybernexus-db
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: changeme  # CHANGE THIS IN PRODUCTION
+      MARIADB_DATABASE: cybernexus
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pchangeme"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: cybernexus-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=mariadb
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=cybernexus
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+volumes:
+  db_data:

@@ -1,0 +1,16 @@
+
+  Over the past several interactions, we transformed the CyberNexus project from a conceptual plan into a functional
+  full-stack application.
+
+   1. Backend Development (FastAPI): We started with a skeleton Python backend and replaced its in-memory list with a robust
+      MariaDB database connection. We then added core features, including a dynamic search endpoint to filter threats and a
+      security audit trail to log new submissions.
+   2. Containerization (Docker): To make the backend and database easy to manage, we containerized them. I created a
+      Dockerfile for the FastAPI application and a docker-compose.yml file to orchestrate both the backend and MariaDB
+      containers, enabling a one-command startup.
+   3. Frontend Setup (React + TailwindCSS): We configured the existing React frontend to use TailwindCSS. After resolving
+      several environment and permission issues with npm, we successfully installed the necessary dependencies and created
+      the configuration files.
+   4. UI Development: Finally, I replaced the boilerplate React code with a complete, functional user interface. This UI,
+      styled with TailwindCSS, provides a form to submit new threats, a search bar to filter the threat feed, and a
+      real-time display of data fetched from the backend API.

@@ -1,0 +1,95 @@
+Day 1 – Finalize Backend Foundation
+
+✅ Review FastAPI endpoints: /submit-threat, /search-threats, /analytics.
+
+✅ Ensure MariaDB schema is fully defined:
+
+Threat table: id, type, source, severity, timestamp, description.
+
+Audit log table: action, user, timestamp.
+
+✅ Implement basic validation and security (input sanitization, rate limiting).
+
+Goal: Fully working backend API connected to MariaDB, tested via Postman or curl.
+
+Day 2 – Containerization & Deployment
+
+✅ Create Dockerfile for FastAPI app if not finalized.
+
+✅ Update docker-compose.yml for backend + MariaDB + optional adminer for DB management.
+
+✅ Test one-command startup and ensure container networking works.
+
+Goal: Backend + DB running in Docker reliably on your local machine.
+
+Day 3 – Frontend Setup & Basic UI
+
+✅ Initialize React frontend with TailwindCSS.
+
+✅ Set up environment variables for API endpoints.
+
+✅ Create core pages:
+
+Threat submission form
+
+Threat search page
+
+Dashboard placeholder
+
+✅ Connect frontend forms to backend endpoints.
+
+Goal: Simple, functional UI with working API integration.
+
+Day 4 – Interactive Dashboard & Analytics
+
+✅ Fetch threat data and display in a table.
+
+✅ Add basic charts for visualizing threat trends (using libraries like Chart.js or Recharts).
+
+✅ Implement search/filtering in UI.
+
+Goal: Users can see threats, search, and view analytics on the dashboard.
+
+Day 5 – ML-Based Clustering (Optional MVP)
+
+✅ Implement simple threat clustering using Python (e.g., k-means on threat type/frequency).
+
+✅ Expose analytics endpoint /analytics to return clusters.
+
+✅ Display clusters visually in the dashboard.
+
+Goal: Backend returns basic analytical insights; frontend shows them visually.
+
+Day 6 – Polish, Security, & UX
+
+✅ Improve form validation, error handling, and notifications.
+
+✅ Implement simple authentication if feasible (e.g., API key or admin login).
+
+✅ Clean UI styles: responsive design, light/dark mode if possible.
+
+✅ Test cross-browser functionality.
+
+Goal: Product feels professional, secure, and user-friendly.
+
+Day 7 – Final Testing & Deployment
+
+✅ Run end-to-end tests (submit → store → retrieve → visualize).
+
+✅ Prepare deployment setup (can deploy locally, or on a free cloud service like Railway, Render, or Docker Hub).
+
+✅ Write a simple README with setup instructions.
+
+✅ Optional: Record a demo video/screenshots for portfolio or submission.
+
+Goal: Fully working, solo-built prototype ready for demonstration.
+
+Tips for Solo Execution
+
+Focus on functional MVP over advanced features.
+
+Use prebuilt libraries (Chart.js, React Query) to save time.
+
+Keep commits frequent; consider GitHub as your version control.
+
+Skip non-critical features (mobile app, blockchain, multilingual) for now.
